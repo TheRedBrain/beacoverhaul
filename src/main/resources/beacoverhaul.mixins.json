@@ -1,0 +1,22 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.github.theredbrain.beacoverhaul.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "block.entity.BeaconBlockEntityMixin",
+    "block.BeaconBlockMixin",
+    "block.BlockMixin",
+    "block.EnderChestBlockMixin",
+    "block.RespawnAnchorBlockMixin",
+    "entity.player.PlayerEntityMixin",
+    "item.CompassItemInvoker",
+    "item.CompassItemMixin",
+    "loot.condition.KilledByPlayerLootConditionMixin",
+    "loot.condition.RandomChanceWithLootingLootConditionMixin",
+    "loot.function.LootingEnchantLootFunctionMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

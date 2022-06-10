@@ -1,38 +1,42 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
-  "version": "${version}",
+  "id": "beacoverhaul",
+  "version": "1.0.0",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Beacoverhaul",
+  "description": "This mod overhauls beacons, respawn anchors, lodestones and the ender chest.",
   "authors": [
-    "Me!"
+    "TheRedBrain"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "sources": "https://github.com/TheRedBrain/beacoverhaul"
   },
 
-  "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "license": "MIT",
+  "icon": "assets/beacoverhaul/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "com.github.theredbrain.beacoverhaul.Beacoverhaul"
+    ],
+    "cardinal-components": [
+      "com.github.theredbrain.beacoverhaul.components.BeacoverhaulComponents"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "beacoverhaul.mixins.json"
   ],
 
   "depends": {
-    "fabricloader": ">=0.14.6",
+    "fabricloader": ">=0.14.7",
     "fabric": "*",
-    "minecraft": "~1.19",
+    "minecraft": "1.19.x",
     "java": ">=17"
   },
-  "suggests": {
-    "another-mod": "*"
+  "custom": {
+    "cardinal-components": [
+      "beacoverhaul:shared-ender-chest-inventories"
+    ]
   }
 }
