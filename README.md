@@ -1,3 +1,3 @@
-# RedBrain's Tweaks
+# Beacoverhaul
 
-A mod which tweaks a few things to make gameplay more balanced and interesting.
+An overhaul to Minecrafts beacons, respawn anchors, lodestones and the enderchest.

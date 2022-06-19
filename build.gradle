@@ -41,6 +41,8 @@ dependencies {
 	// Includes Cardinal Components API as a Jar-in-Jar dependency (optional)
 	include "dev.onyxstudios.cardinal-components-api:cardinal-components-base:${project.cardinal_components_version}"
 	include "dev.onyxstudios.cardinal-components-api:cardinal-components-level:${project.cardinal_components_version}"
+	// recommended by cardinal-components-level
+	include "dev.onyxstudios.cardinal-components-api:cardinal-components-world:${project.cardinal_components_version}"
 }
 
 processResources {
