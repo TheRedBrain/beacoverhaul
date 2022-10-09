@@ -1,11 +1,11 @@
 package com.github.theredbrain.beacoverhaul.inventory;
-
-
-import dev.onyxstudios.cca.api.v3.component.ComponentV3;
-import net.minecraft.inventory.EnderChestInventory;
-
-import java.util.List;
-
-public interface EnderChestInventoryListComponent extends ComponentV3 {
-    List<EnderChestInventory> getSharedEnderChestInventories();
-}
+//
+//
+//import dev.onyxstudios.cca.api.v3.component.ComponentV3;
+//import net.minecraft.inventory.EnderChestInventory;
+//
+//import java.util.List;
+//
+//public interface EnderChestInventoryListComponent extends ComponentV3 {
+//    List<EnderChestInventory> getSharedEnderChestInventories();
+//}

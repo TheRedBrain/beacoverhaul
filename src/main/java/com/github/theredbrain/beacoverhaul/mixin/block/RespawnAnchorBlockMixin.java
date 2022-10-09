@@ -1,7 +1,9 @@
 package com.github.theredbrain.beacoverhaul.mixin.block;
 
+import com.github.theredbrain.beacoverhaul.block.BlockMixinDuck;
 import com.github.theredbrain.beacoverhaul.block.entity.RespawnAnchorBlockMixinDuck;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.BlockWithEntity;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.RespawnAnchorBlock;
 import net.minecraft.entity.player.PlayerEntity;
@@ -68,46 +70,47 @@ public class RespawnAnchorBlockMixin implements RespawnAnchorBlockMixinDuck {
     }
 
     private static boolean canChargeAndHasPyramid(BlockState state, World world, BlockPos pos) {
-        return ((Integer)state.get(CHARGES) < 4 && hasPyramid(world, pos));
+        return ((Integer)state.get(CHARGES) < 4 && ((BlockMixinDuck)state.getBlock()).hasPyramid(world, pos, Blocks.NETHERITE_BLOCK));
     }
 
-    private static boolean hasPyramid(World world, BlockPos pos) {
-        int i = 0;
-        int x = pos.getX();
-        int y = pos.getY();
-        int z = pos.getZ();
-
-        if(!(world.getBlockState(new BlockPos(x, y-1, z)).isOf(Blocks.NETHERITE_BLOCK))) {
-            return false;
-        }
-
-        for(int j = 1; j <= 4; i = j++) {
-            int k = y - j;
-            if (k < world.getBottomY()) {
-                break;
-            }
-
-            boolean bl = true;
-
-            for(int l = x - j; l <= x + j && bl; ++l) {
-                for(int m = z - j; m <= z + j; ++m) {
-                    if (!world.getBlockState(new BlockPos(l, k, m)).isOf(Blocks.NETHERITE_BLOCK)) {
-                        bl = false;
-                        break;
-                    }
-                }
-            }
-
-            if (!bl) {
-                break;
-            }
-        }
-
-        return i == 4;
-    }
+//    // TODO replace with BlockMixin version
+//    private static boolean hasPyramid(World world, BlockPos pos) {
+//        int i = 0;
+//        int x = pos.getX();
+//        int y = pos.getY();
+//        int z = pos.getZ();
+//
+//        if(!(world.getBlockState(new BlockPos(x, y-1, z)).isOf(Blocks.NETHERITE_BLOCK))) {
+//            return false;
+//        }
+//
+//        for(int j = 1; j <= 4; i = j++) {
+//            int k = y - j;
+//            if (k < world.getBottomY()) {
+//                break;
+//            }
+//
+//            boolean bl = true;
+//
+//            for(int l = x - j; l <= x + j && bl; ++l) {
+//                for(int m = z - j; m <= z + j; ++m) {
+//                    if (!world.getBlockState(new BlockPos(l, k, m)).isOf(Blocks.NETHERITE_BLOCK)) {
+//                        bl = false;
+//                        break;
+//                    }
+//                }
+//            }
+//
+//            if (!bl) {
+//                break;
+//            }
+//        }
+//
+//        return i == 4;
+//    }
 
     @Override
     public boolean isStillValid(World world, BlockPos pos) {
-        return hasPyramid(world, pos);
+        return ((BlockMixinDuck)world.getBlockState(pos).getBlock()).hasPyramid(world, pos, Blocks.NETHERITE_BLOCK);
     }
 }

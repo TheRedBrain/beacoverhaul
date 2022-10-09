@@ -4,7 +4,7 @@
   "version": "1.0.0",
 
   "name": "Beacoverhaul",
-  "description": "This mod overhauls beacons, respawn anchors, lodestones and the ender chest.",
+  "description": "This mod overhauls beacons, respawn anchors and lodestones.",
   "authors": [
     "TheRedBrain"
   ],
@@ -19,9 +19,6 @@
   "entrypoints": {
     "main": [
       "com.github.theredbrain.beacoverhaul.Beacoverhaul"
-    ],
-    "cardinal-components": [
-      "com.github.theredbrain.beacoverhaul.components.BeacoverhaulComponents"
     ]
   },
   "mixins": [
@@ -33,10 +30,5 @@
     "fabric": "*",
     "minecraft": "1.19.x",
     "java": ">=17"
-  },
-  "custom": {
-    "cardinal-components": [
-      "beacoverhaul:shared-ender-chest-inventories"
-    ]
   }
 }

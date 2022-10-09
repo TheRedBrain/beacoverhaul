@@ -7,7 +7,6 @@
     "block.entity.BeaconBlockEntityMixin",
     "block.BeaconBlockMixin",
     "block.BlockMixin",
-    "block.EnderChestBlockMixin",
     "block.RespawnAnchorBlockMixin",
     "entity.player.PlayerEntityMixin",
     "item.CompassItemInvoker",
